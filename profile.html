@@ -1,0 +1,1166 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>User Two</title>
+
+    <link href="http://viceroydemo.lyk.io/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://viceroydemo.lyk.io/assets/web/lykio/css/bootstrapXL.css" rel="stylesheet">
+    <link href="http://viceroydemo.lyk.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="http://viceroydemo.lyk.io/assets/js/plugins/d3-hierarchical-pie/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://viceroydemo.lyk.io/assets/css/plugins/steps/jquery.steps.css" rel="stylesheet">
+    <link href="http://viceroydemo.lyk.io/assets/css/animate.css" rel="stylesheet">
+    <link href="http://viceroydemo.lyk.io/assets/css/plugins/jasny/jasny-bootstrap.min.css" rel="stylesheet">
+    <link href="http://viceroydemo.lyk.io/assets/css/plugins/jplayer/skin/blue.monday/css/jplayer.blue.monday.css" rel="stylesheet">
+    <script src="http://viceroydemo.lyk.io/assets/js/less.min.js" type="text/javascript"></script>
+    <script src="http://viceroydemo.lyk.io/assets/js/plugins/sweetalert/sweetalert.min.js"></script>
+    <link href="http://viceroydemo.lyk.io/assets/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+
+    <script src="http://viceroydemo.lyk.io/assets/js/plugins/bowser/bowser.min.js"></script>
+    <script src="http://viceroydemo.lyk.io/assets/js/plugins/he/he.js"></script>
+
+    <script src="http://viceroydemo.lyk.io/assets/lykio/js/general.js"></script>
+    <script type="text/javascript" src="/messages.js"></script>
+    <script type="text/javascript" src="http://viceroydemo.lyk.io/assets/lykio/js/lykiolang.js"></script>
+
+    <script type="text/javascript" src="http://viceroydemo.lyk.io/assets/lykio/js/notifications.js"></script>
+
+    <link href="http://viceroydemo.lyk.io/assets/web/less/css/lykio_vr_main.css" rel="stylesheet">
+    <link href="http://viceroydemo.lyk.io/assets/platform/css/bootstrap-rating.css" rel="stylesheet">
+    <link href="http://viceroydemo.lyk.io/assets/css/plugins/dropzone/basic.css" rel="stylesheet">
+    <link href="http://viceroydemo.lyk.io/assets/css/plugins/dropzone/dropzone.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://viceroydemo.lyk.io/assets/platform/platformFonts/css/platform_icons.css">
+    <link rel="stylesheet" type="text/css" href="http://viceroydemo.lyk.io/assets/platform/platformFonts/css/platform_icons-codes.css">
+    <link rel="stylesheet" type="text/css" href="http://viceroydemo.lyk.io/assets/platform/platformFonts/css/platform_icons-embedded.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.1.1/gh-fork-ribbon.min.css">
+    <!--[if lt IE 9]>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.1.1/gh-fork-ribbon.ie.min.css" />
+        <![endif]-->
+
+    <script src="http://viceroydemo.lyk.io/assets/js/jquery-1.11.1.js">
+
+    </script>
+
+    <script src="http://viceroydemo.lyk.io/assets/js/bootstrap.min.js"></script>
+    <script src="http://viceroydemo.lyk.io/assets/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="http://viceroydemo.lyk.io/assets/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <script src="http://viceroydemo.lyk.io/assets/js/inspinia.js"></script>
+    <script src="http://viceroydemo.lyk.io/assets/js/plugins/pace/pace.min.js"></script>
+    <script src="http://viceroydemo.lyk.io/assets/js/frontEndTools.js"></script>
+    <script src="http://viceroydemo.lyk.io/assets/platform/js/searchUtils.js"></script>
+    <link href="http://viceroydemo.lyk.io/assets/new-navbar/navbar.css" rel="stylesheet">
+    <script>
+        $(document).ready(function () {
+            //ajax setup - to prevent IE11 from caching ajax responses
+            $.ajaxSetup({
+                cache: false
+            });
+        });
+
+        function addLoadEvent(func) {
+            var oldonload = window.onload;
+            if (typeof window.onload != 'function') {
+                window.onload = func;
+            } else {
+                window.onload = function () {
+                    if (oldonload) {
+                        oldonload();
+                    }
+                    func();
+
+                }
+            }
+        }
+
+
+        function modeConsolidation() {
+            $.ajax({
+                url: "/mode/enableConsolidationView",
+                success: function () {
+                    location.reload();
+                }
+            });
+        }
+
+        function modeManager() {
+            $.ajax({
+                url: "/mode/enableManagerView",
+                success: function () {
+                    location.reload();
+                }
+            });
+        }
+
+
+    </script>
+    <style>
+        .overrideBody {
+            background: none;
+        }
+
+        .badge-is-disabled {
+            filter: grayscale(100%);
+        }
+    </style>
+</head>
+
+
+<body class="lykio-body skin-V  pace-done">
+    <div class="pace  pace-inactive">
+        <div class="pace-progress" data-progress-text="100%" data-progress="99"
+            style="transform: translate3d(100%, 0px, 0px);">
+            <div class="pace-progress-inner"></div>
+        </div>
+        <div class="pace-activity"></div>
+    </div>
+    <div id="wrapper" style="height:100%">
+        <header>
+            <nav id="lykio-vr-navbar" class="navbar navbar-default navbar-fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a id="vr-logo" class="navbar-brand" href="/um/home"><img src="http://viceroydemo.lyk.io/assets/img/logo_sm_white.png"
+                                alt="Viceroy Logo"></a>
+                    </div>
+                    <div id="navbar-content">
+                        <ul class="nav navbar-nav navbar-center">
+                            <li>
+                                <a class="lykio-vr-navbar-text"
+                                    href="/um/pridestories/196/recent?updatedStoryTitle=none" id="stories">
+                                    Pride Stories</a>
+                                <a class="lykio-vr-tooltip lykio-vr-navbar-icon"
+                                    href="/um/pridestories/196/recent?updatedStoryTitle=none"
+                                    data-tooltip="Pride&nbsp;Stories"><i class="fa fa-camera-retro"></i></a>
+                            </li>
+                            <li class="lykio-vr-nav-li active dropdown">
+                                <a id="toolkit" class="lykio-vr-navbar-text dropdown-toggle" data-toggle="dropdown"
+                                    href="#">
+                                    Ideology Toolkit<span class="caret"></span>
+                                </a>
+                                <a class="lykio-vr-tooltip lykio-vr-navbar-icon dropdown-toggle"
+                                    data-tooltip="Ideology Toolkit" data-toggle="dropdown" href="#">
+                                    <i class="fa fa-leanpub"></i>
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/um/newUIcategory/168">Hospitality</a></li>
+                                    <li><a href="/um/newUIcategory/175">Resourceful</a></li>
+                                    <li><a href="/um/newUIcategory/181">Individuality</a></li>
+                                    <li><a href="/um/newUIcategory/186">Courage</a></li>
+                                    <li><a href="/um/newUIcategory/189">Enrich</a></li>
+                                    <li><a href="/um/newUIcategory/193">Reward</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="lykio-vr-navbar-text" href="/um/newReports" id="reporting">Reporting</a>
+                                <a class="lykio-vr-tooltip lykio-vr-navbar-icon" href="/um/newReports"
+                                    data-tooltip="Reporting"><i class="fa fa-bar-chart"></i></a>
+                            </li>
+                            <li class="lykio-vr-nav-li dropdown">
+                                <a id="toolkit" class="lykio-vr-navbar-text dropdown-toggle" data-toggle="dropdown"
+                                    href="#">Admin
+                                    <span class="caret"></span>
+                                </a>
+                                <a class="lykio-vr-tooltip lykio-vr-navbar-icon dropdown-toggle" data-tooltip="Admin"
+                                    data-toggle="dropdown" href="#">
+                                    <i class="fa fa-cogs"></i>
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/rateContent">Content Rating</a></li>
+                                    <li><a href="/goalReminders">Goal Promotion</a></li>
+                                    <li><a href="/newContentReminders">Other Reminders</a></li>
+                                    <li><a href="/admin/tenantTreeOverview">Administration Panel</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a class="lykio-vr-tooltip lykio-vr-navbar-iconXtra dropdown-toggle count-info"
+                                    data-tooltip="Messages" data-toggle="dropdown" href="#">
+                                    <i class="fa fa-envelope"></i> <span id="msg_number" class="label vr-action-color"
+                                        style="display: none;"></span>
+                                </a>
+                                <ul id="message_list" class="dropdown-menu dropdown-alerts">
+                                    <div id="unseen_messages" class="hide">0</div>
+                                    <p><strong>There are no new messages.</strong></p>
+                                    <a href="/um/mailbox">
+                                        <div class="clearfix">
+                                            <div class="col-xs-3">
+                                            </div>
+                                            <div class="col-xs-9">
+                                                <p>Go to page</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="lykio-vr-tooltip lykio-vr-navbar-iconXtra dropdown-toggle count-info"
+                                    data-tooltip="Notifications" data-toggle="dropdown" href="#">
+                                    <i class="fa fa-bell"></i> <span id="nf_number"
+                                        class="label vr-action-color">2</span>
+                                </a>
+                                <ul id="notification_list" class="dropdown-menu dropdown-alerts">
+                                    <div id="unseen_notifications" class="hide">2</div>
+                                    <li>
+                                        <a href="/ugc/overview/788_196">
+                                            <div class="clearfix">
+                                                <div class="col-xs-9">
+                                                    <i class="fa fa-envelope fa-fw"></i> Your unit The best lo...
+                                                </div>
+                                                <div class="col-xs-3 text-muted small pull-right">30/06/2021 18:34</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a href="/ugc/overview/788_196">
+                                            <div class="clearfix">
+                                                <div class="col-xs-9">
+                                                    <i class="fa fa-envelope fa-fw"></i> Your content is sent ...
+                                                </div>
+                                                <div class="col-xs-3 text-muted small pull-right">30/06/2021 18:33</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a href="/um/notifications">
+                                            <div class="clearfix">
+                                                <div class="col-xs-3">
+                                                </div>
+                                                <div class="col-xs-9">
+                                                    <p>Show More</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li> <button onclick="location.href='/ugc/uploadPrideologyUgcSetup'"
+                                    class="lykio-vr-tooltip" data-tooltip="Add&nbsp;Story"><i
+                                        class="fa fa-plus-circle"></i></button></li>
+                            <li> <button data-toggle="modal" data-target="#advanced-search-panel"
+                                    class="lykio-vr-tooltip" data-tooltip="Search"><i class="fa fa-search"></i></button>
+                            </li>
+
+                            <li id="lykio-vr-user-container">
+                                <div id="lykio-vr-user-info">
+                                    <div class="lykio-vr-user-name">User</div>
+                                    <div class="lykio-vr-user-level">
+                                        1
+                                    </div>
+                                </div>
+                                <div id="fadingElements" class="lykio-vr-profile-vertical-slider-area">
+                                    <div style="display: none;">
+                                        <div
+                                            style="font-weight: 900; color: rgb(255, 255, 255); font-size: 1.6rem; display: none;">
+                                            <i class="fa fa-bullseye" aria-hidden="true"></i>
+                                            150 XP
+                                        </div>
+                                    </div>
+                                    <div style="display: block; opacity: 0.684938;">
+                                        <img style="max-width: 2em;"
+                                            src="http://static.lyk.io/DEV/lykio/assets/images/badges/compl_10_sys_units.png"
+                                            title="Explorer" class="lykio-vr-badge">
+                                        <img style="max-width: 2em;"
+                                            src="http://static.lyk.io/DEV/lykio/assets/images/badges/compl_20_sys_units.png"
+                                            title="Experienced Explorer" class="lykio-vr-badge">
+                                        <img style="max-width: 2em;"
+                                            src="http://static.lyk.io/DEV/lykio/assets/images/badges/compl_all_sys_units.png"
+                                            title="Great Explorer" class="lykio-vr-badge">
+                                    </div>
+                                    <div style="display: none;">
+                                        <img style="max-width: 2em;"
+                                            src="http://static.lyk.io/DEV/lykio/assets/images/badges/upl_1_ugc.png"
+                                            title="Rising Star" class="lykio-vr-badge">
+                                        <img style="max-width: 2em;"
+                                            src="http://static.lyk.io/DEV/lykio/assets/images/badges/upl_5_ugc.png"
+                                            title="Distinguished Contributor - Create &amp; Upload 5 units to get it"
+                                            class="lykio-vr-badge badge-is-disabled">
+                                        <img style="max-width: 2em;"
+                                            src="http://static.lyk.io/DEV/lykio/assets/images/badges/upl_20_ugc.png"
+                                            title="Lighthouse of Knowledge - Create &amp; Upload 20 units to get it"
+                                            class="lykio-vr-badge badge-is-disabled">
+                                        <img style="max-width: 2em;"
+                                            src="http://static.lyk.io/DEV/lykio/assets/images/badges/upl_40_ugc.png"
+                                            title="Scholar - Create &amp; Upload 40 units to get it"
+                                            class="lykio-vr-badge badge-is-disabled">
+                                    </div>
+                                </div>
+                                <div class="progress">
+                                    <div id="dynamic" class="progress-bar" role="progressbar" aria-valuenow="80"
+                                        aria-valuemin="0" aria-valuemax="100" style="width: 80%;">Level: 1</div>
+                                    <div class="progress-bar-right"></div>
+                                </div>
+                            </li>
+                            <li id="lykio-vr-profile-container">
+                                <a id="btn_account" class="lykio-vr-tooltip dropdown-toggle" data-toggle="dropdown"
+                                    data-tooltip="Account">
+                                    <img id="lykio-profile-picture" src="/cr/getPhotoByUid/7d9241e3-208" alt="Profile">
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/um/myProfile"><i class="fa fa-user"></i> Profile</a></li>
+                                    <li><a href="/settings"><i class="fa fa-users"></i> Account Settings</a></li>
+                                    <script>
+                                        function selectWebContentMenuItem() {
+                                            var url = document.location.href;
+                                            var id;
+                                            if (url != null && url.length > 0 && url.indexOf("/content/")) {
+                                                var term = "/content/";
+                                                var index = url.indexOf(term);
+                                                if (index > 0) {
+                                                    id = url.substring(index + term.length);
+                                                    var d = document.getElementById("wDto_" + id);
+                                                    if (d != null) {
+                                                        d.className = d.className + " active";
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        selectWebContentMenuItem();
+                                    </script>
+                                    <li><a href="/"><i class="fa fa-sign-out"></i> Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="mainContent">
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <h2>User Two</h2>
+                    <ol class="breadcrumb">
+                        <li class="active">
+                            <strong>My Profile</strong>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2">
+                </div>
+            </div>
+            <div class="wrapper wrapper-content">
+                <div class="row animated fadeInRight">
+                    <div class="col-md-6 col-lg-5" style="overflow: overlay;">
+                        <div class="ibox float-e-margins ">
+                            <div class="ibox-title">
+                                <h5>My Profile</h5>
+                            </div>
+                            <div>
+                                <div class="ibox-content no-padding border-left-right">
+                                    <img alt="image" class="img-responsive" src="https://us.123rf.com/450wm/fizkes/fizkes2007/fizkes200701872/152319944-close-up-headshot-portrait-of-smiling-vietnamese-young-woman-look-at-camera-talk-on-video-call-profi.jpg?ver=6">
+                                </div>
+                                <div class="ibox-content profile-content">
+                                    <div class="col-xs-2 nopadding-left nopadding-right">
+                                        <div class="vr-user-level-profile text-mid nomargin-right">1</div>
+                                    </div>
+                                    <div class="col-xs-10 nopadding-left">
+                                        <div>
+                                            <h2><strong>User Two</strong></h2>
+                                        </div>
+                                        <p> </p>
+                                        <h4>
+                                            Viceroy
+                                        </h4>
+                                        <p></p>
+                                        <p></p>
+                                        <h4>150 XP </h4>
+                                        <p></p>
+                                        <p></p>
+                                        <h4>0 Followers </h4>
+                                        <p></p>
+                                    </div>
+                                    <h4>
+                                        Summary
+                                    </h4>
+                                    <p>
+                                        Viceroy User Two
+                                    </p>
+                                    <br>
+                                    <div class="user-button">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <button id="edit-profile" type="button"
+                                                    class="btn vr-button btn-primary btn-sm btn-block">Edit
+                                                    Profile</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+
+                                    <div id="editable-info" class="hidden">
+                                        <form class="form-horizontal" action="/um/editProfile" method="post"
+                                            id="uploadForm">
+                                            <input type="file" accept="image/*" name="file" id="inputImage"
+                                                class="hide">
+                                            <div class="form-group">
+                                                <div class="user-button col-md-6" id="photo-upload-btn">
+                                                    <label title="Upload image file" for="inputImage"
+                                                        class="btn btn-primary vr-button btn-sm btn-block">
+                                                        Upload new image
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="summaryEdit" class="col-sm-2 control-label">Summary</label>
+                                                <div class="col-sm-12">
+                                                    <textarea type="textArea" class="form-control" id="summaryEdit"
+                                                        name="summaryEdit" placeholder="Add something about you..."
+                                                        value="Viceroy User Two">Viceroy User Two</textarea>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <a href="/um/myProfile">
+                                                        <button id="cancel-profile-changes" type="button"
+                                                            class="btn btn-primary vr-button btn-sm btn-block">Cancel</button>
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <button id="save-profile-changes" type="button"
+                                                        class="btn btn-primary vr-button btn-sm btn-block">Save
+                                                        Changes</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <link href="http://viceroydemo.lyk.io/assets/lykio/css/badges.css" rel="stylesheet">
+                    <div class="col-md-12 col-lg-7" style="">
+                        <div class="ibox float-e-margins ">
+                            <div class="iookbox">
+                                <div class="ibox-title">
+                                    <h4>Awards</h4>
+                                </div>
+                                <div class="ibox-content">
+                                    <div class="accomplishments" style="margin-left:-30px; margin-right:-30px">
+                                        <div class="accomplishments__badges">
+                                            <ul>
+                                                <li>
+                                                    <figure class="accomplishments__badge ">
+                                                        <span class="community-badges__badge-wrapper">
+                                                            <img alt="Explorer"
+                                                                src="http://static.lyk.io/DEV/lykio/assets/images/badges/compl_10_sys_units.png">
+                                                        </span>
+                                                        <figcaption class="accomplishments__badge--description">
+                                                            <strong
+                                                                class="t-heading -size-xs -color-inherit">Explorer</strong>
+                                                            <small class="t-body -size-m -color-inherit">Complete 10
+                                                                System units</small>
+                                                        </figcaption>
+                                                    </figure>
+                                                </li>
+                                                <li>
+                                                    <figure class="accomplishments__badge ">
+                                                        <span class="community-badges__badge-wrapper">
+                                                            <img alt="Experienced Explorer"
+                                                                src="http://static.lyk.io/DEV/lykio/assets/images/badges/compl_20_sys_units.png">
+                                                        </span>
+                                                        <figcaption class="accomplishments__badge--description">
+                                                            <strong
+                                                                class="t-heading -size-xs -color-inherit">Experienced
+                                                                Explorer</strong>
+                                                            <small class="t-body -size-m -color-inherit">Complete 20
+                                                                System units</small>
+                                                        </figcaption>
+                                                    </figure>
+                                                </li>
+                                                <li>
+                                                    <figure class="accomplishments__badge ">
+                                                        <span class="community-badges__badge-wrapper">
+                                                            <img alt="Great Explorer"
+                                                                src="http://static.lyk.io/DEV/lykio/assets/images/badges/compl_all_sys_units.png">
+                                                        </span>
+                                                        <figcaption class="accomplishments__badge--description">
+                                                            <strong class="t-heading -size-xs -color-inherit">Great
+                                                                Explorer</strong>
+                                                            <small class="t-body -size-m -color-inherit">Complete all
+                                                                System units</small>
+                                                        </figcaption>
+                                                    </figure>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="accomplishments__badges">
+                                            <ul>
+                                                <li>
+                                                    <figure class="accomplishments__badge is-disabled">
+                                                        <span class="community-badges__badge-wrapper">
+                                                            <img alt="Rising Star"
+                                                                src="http://static.lyk.io/DEV/lykio/assets/images/badges/upl_1_ugc.png">
+                                                        </span>
+                                                        <figcaption class="accomplishments__badge--description">
+                                                            <strong class="t-heading -size-xs -color-inherit">Rising
+                                                                Star</strong>
+                                                            <small class="t-body -size-m -color-inherit">Create &amp;
+                                                                Upload a unit</small>
+                                                        </figcaption>
+                                                    </figure>
+                                                </li>
+                                                <li>
+                                                    <figure class="accomplishments__badge is-disabled">
+                                                        <span class="community-badges__badge-wrapper">
+                                                            <img alt="Distinguished Contributor"
+                                                                src="http://static.lyk.io/DEV/lykio/assets/images/badges/upl_5_ugc.png">
+                                                        </span>
+                                                        <figcaption class="accomplishments__badge--description">
+                                                            <strong
+                                                                class="t-heading -size-xs -color-inherit">Distinguished
+                                                                Contributor</strong>
+                                                            <small class="t-body -size-m -color-inherit">Create &amp;
+                                                                Upload 5 units</small>
+                                                        </figcaption>
+                                                    </figure>
+                                                </li>
+                                                <li>
+                                                    <figure class="accomplishments__badge is-disabled">
+                                                        <span class="community-badges__badge-wrapper">
+                                                            <img alt="Lighthouse of Knowledge"
+                                                                src="http://static.lyk.io/DEV/lykio/assets/images/badges/upl_20_ugc.png">
+                                                        </span>
+                                                        <figcaption class="accomplishments__badge--description">
+                                                            <strong class="t-heading -size-xs -color-inherit">Lighthouse
+                                                                of Knowledge</strong>
+                                                            <small class="t-body -size-m -color-inherit">Create &amp;
+                                                                Upload 20 units</small>
+                                                        </figcaption>
+                                                    </figure>
+                                                </li>
+                                                <li>
+                                                    <figure class="accomplishments__badge is-disabled">
+                                                        <span class="community-badges__badge-wrapper">
+                                                            <img alt="Scholar"
+                                                                src="http://static.lyk.io/DEV/lykio/assets/images/badges/upl_40_ugc.png">
+                                                        </span>
+                                                        <figcaption class="accomplishments__badge--description">
+                                                            <strong
+                                                                class="t-heading -size-xs -color-inherit">Scholar</strong>
+                                                            <small class="t-body -size-m -color-inherit">Create &amp;
+                                                                Upload 40 units</small>
+                                                        </figcaption>
+                                                    </figure>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row animated fadeInRight">
+                            <div class="col-lg-12">
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-title">
+                                        <h5>My Timeline</h5>
+                                    </div>
+                                    <div class="ibox-content" id="ibox-content">
+                                        <div id="vertical-timeline"
+                                            class="vertical-container dark-timeline center-orientation">
+                                            <div class="vertical-timeline-block">
+                                                <div class="vertical-timeline-icon vr-tl-feed">
+                                                    <img alt="image" class="vr-tl-feed-img"
+                                                        src="http://viceroydemo.lyk.io/assets/platform/img/tmln_icons/content.png">
+
+
+                                                </div>
+                                                <div class="vertical-timeline-content">
+                                                    <h2>Content published</h2>
+                                                    <p>User published new content.
+                                                    </p>
+                                                    <a href="/ugc/overview/788_196"
+                                                        class="btn btn-sm vr-button btn-primary">More info</a>
+                                                    <span class="vertical-date">
+                                                        23 hour(s) ago <br>
+                                                        <small>30/06/2021 18:33</small>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="vertical-timeline-block">
+                                                <div class="vertical-timeline-icon vr-tl-feed">
+                                                    <img alt="image" class="vr-tl-feed-img"
+                                                        src="http://viceroydemo.lyk.io/assets/platform/img/tmln_icons/rateRank.png">
+
+
+                                                </div>
+                                                <div class="vertical-timeline-content">
+                                                    <h2>Unit rated</h2>
+                                                    <p>User rated 5 out of 5 for unit This is amazing!. Ratings are
+                                                        really important!
+                                                    </p>
+                                                    <a href="/lrs/unitOverview/658_196"
+                                                        class="btn btn-sm vr-button btn-primary">More info</a>
+                                                    <span class="vertical-date">
+                                                        14/06/2019 <br>
+                                                        <small>14/06/2019 09:58</small>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="vertical-timeline-block">
+                                                <div class="vertical-timeline-icon vr-tl-feed">
+                                                    <img alt="image" class="vr-tl-feed-img"
+                                                        src="http://viceroydemo.lyk.io/assets/platform/img/tmln_icons/rateRank.png">
+
+
+                                                </div>
+                                                <div class="vertical-timeline-content">
+                                                    <h2>Unit rated</h2>
+                                                    <p>User rated 5 out of 5 for unit A great story from Viceroy Los
+                                                        Cabos!. Ratings are really important!
+                                                    </p>
+                                                    <a href="/lrs/unitOverview/647_196"
+                                                        class="btn btn-sm vr-button btn-primary">More info</a>
+                                                    <span class="vertical-date">
+                                                        07/06/2019 <br>
+                                                        <small>07/06/2019 15:44</small>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="vertical-timeline-block">
+                                                <div class="vertical-timeline-icon vr-tl-feed">
+                                                    <img alt="image" class="vr-tl-feed-img"
+                                                        src="http://viceroydemo.lyk.io/assets/platform/img/tmln_icons/lvlup.png">
+
+
+                                                </div>
+                                                <div class="vertical-timeline-content">
+                                                    <h2>Level up!</h2>
+                                                    <p>User gathered enough experience points to get to level 6. Keep up
+                                                        the good work!
+                                                    </p>
+                                                    <a href="/um/myProfile"
+                                                        class="btn btn-sm vr-button btn-primary">More info</a>
+                                                    <span class="vertical-date">
+                                                        07/06/2019 <br>
+                                                        <small>07/06/2019 15:32</small>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="vertical-timeline-block">
+                                                <div class="vertical-timeline-icon vr-tl-feed">
+                                                    <img alt="image" class="vr-tl-feed-img"
+                                                        src="http://viceroydemo.lyk.io/assets/platform/img/tmln_icons/lvlup.png">
+
+
+                                                </div>
+                                                <div class="vertical-timeline-content">
+                                                    <h2>Level up!</h2>
+                                                    <p>User gathered enough experience points to get to level 5. Keep up
+                                                        the good work!
+                                                    </p>
+                                                    <a href="/um/myProfile"
+                                                        class="btn btn-sm vr-button btn-primary">More info</a>
+                                                    <span class="vertical-date">
+                                                        07/06/2019 <br>
+                                                        <small>07/06/2019 15:32</small>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="vertical-timeline-block">
+                                                <div class="vertical-timeline-icon vr-tl-feed">
+                                                    <img alt="image" class="vr-tl-feed-img"
+                                                        src="http://viceroydemo.lyk.io/assets/platform/img/tmln_icons/lvlup.png">
+
+
+                                                </div>
+                                                <div class="vertical-timeline-content">
+                                                    <h2>Level up!</h2>
+                                                    <p>User gathered enough experience points to get to level 4. Keep up
+                                                        the good work!
+                                                    </p>
+                                                    <a href="/um/myProfile"
+                                                        class="btn btn-sm vr-button btn-primary">More info</a>
+                                                    <span class="vertical-date">
+                                                        07/06/2019 <br>
+                                                        <small>07/06/2019 15:32</small>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="vertical-timeline-block">
+                                                <div class="vertical-timeline-icon vr-tl-feed">
+                                                    <img alt="image" class="vr-tl-feed-img"
+                                                        src="http://viceroydemo.lyk.io/assets/platform/img/tmln_icons/lvlup.png">
+
+
+                                                </div>
+                                                <div class="vertical-timeline-content">
+                                                    <h2>Level up!</h2>
+                                                    <p>User gathered enough experience points to get to level 3. Keep up
+                                                        the good work!
+                                                    </p>
+                                                    <a href="/um/myProfile"
+                                                        class="btn btn-sm vr-button btn-primary">More info</a>
+                                                    <span class="vertical-date">
+                                                        07/06/2019 <br>
+                                                        <small>07/06/2019 15:32</small>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="vertical-timeline-block">
+                                                <div class="vertical-timeline-icon vr-tl-feed">
+                                                    <img alt="image" class="vr-tl-feed-img"
+                                                        src="http://viceroydemo.lyk.io/assets/platform/img/tmln_icons/lvlup.png">
+
+
+                                                </div>
+                                                <div class="vertical-timeline-content">
+                                                    <h2>Level up!</h2>
+                                                    <p>User gathered enough experience points to get to level 2. Keep up
+                                                        the good work!
+                                                    </p>
+                                                    <a href="/um/myProfile"
+                                                        class="btn btn-sm vr-button btn-primary">More info</a>
+                                                    <span class="vertical-date">
+                                                        07/06/2019 <br>
+                                                        <small>07/06/2019 15:32</small>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="vertical-timeline-block">
+                                                <div class="vertical-timeline-icon vr-tl-feed">
+                                                    <img alt="image" class="vr-tl-feed-img"
+                                                        src="http://viceroydemo.lyk.io/assets/platform/img/tmln_icons/content.png">
+
+
+                                                </div>
+                                                <div class="vertical-timeline-content">
+                                                    <h2>Content published</h2>
+                                                    <p>User published new content.
+                                                    </p>
+                                                    <a href="/ugc/overview/649_196"
+                                                        class="btn btn-sm vr-button btn-primary">More info</a>
+                                                    <span class="vertical-date">
+                                                        07/06/2019 <br>
+                                                        <small>07/06/2019 15:31</small>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="vertical-timeline-block">
+                                                <div class="vertical-timeline-icon vr-tl-feed">
+                                                    <img alt="image" class="vr-tl-feed-img"
+                                                        src="http://viceroydemo.lyk.io/assets/platform/img/tmln_icons/rateRank.png">
+
+
+                                                </div>
+                                                <div class="vertical-timeline-content">
+                                                    <h2>Unit rated</h2>
+                                                    <p>User rated 5 out of 5 for unit Reward test ugc. Ratings are
+                                                        really important!
+                                                    </p>
+                                                    <a href="/lrs/unitOverview/646_196"
+                                                        class="btn btn-sm vr-button btn-primary">More info</a>
+                                                    <span class="vertical-date">
+                                                        07/06/2019 <br>
+                                                        <small>07/06/2019 15:27</small>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        $(document).ready(function () {
+            $("#rootCategory").click(function () {
+                window.location = "/um/home";
+            });
+        });
+        var goToCategory = function (categoryId) { window.location = "/um/category/" + categoryId; };
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#terms").keypress(function (e) {
+                if (e.keyCode == 13) {
+                    e.preventDefault();
+                    if ($("#terms").val().length > 0) {
+                        window.location = "/search/content/" + $("#terms").val();
+                    }
+                }
+            });
+            $("#search-advanced-post").on("click", function () {
+                //call function here
+                searchUtils.advancedSearchQuery();
+            });
+            setTimeout(function () { getMessages() }, 2000);
+            setTimeout(function () { getNotifications() }, 1000);
+        });
+
+    </script>
+    <script type="text/javascript" charset="utf-8">
+        $(function () {
+            try {
+                var WS = window['MozWebSocket'] ? MozWebSocket : WebSocket;
+                var socket = new WS("ws://viceroydemo.lyk.io/badges");
+
+                var awards = [];
+                var sendMessage = function () { };
+
+                var receiveEvent = function (event) {
+                    var award = JSON.parse(event.data);
+
+                    var len = awards.length;
+                    if (len == 0 && !$(".sweet-alert").hasClass("visible")) {
+                        setTimeout(function () {
+                            showAwards();
+                        }, 1000);
+                    }
+
+                    awards.push(award);
+                    console.log("Push size:" + len)
+                };
+
+
+                function showAwards() {
+                    if ($(".sweet-alert").hasClass("visible")) {
+                        return;
+                    }
+                    var award = awards[0];
+
+                    if (!award) {
+                        return;
+                    }
+                    console.log("Award size:" + awards.length);
+                    swal({
+                        title: LangMessages.get("badges." + award.name + ".title"),
+                        text: LangMessages.get("badges." + award.name + ".text"),
+                        imageUrl: award.resourceUrl,
+                        imageSize: "120x120"
+                    }, function () {
+                        awards.shift();
+                        setTimeout(function () {
+                            showAwards();
+                        }, 1000);
+                    });
+                }
+                socket.onmessage = receiveEvent;
+            } catch (err) {
+                console.log(err);
+            }
+
+        });
+
+    </script>
+    <input type="hidden" name="userIdLoggedIn" id="userIdLoggedIn" value="1070">
+    <div id="printToPdfWrapper" class="">
+        <form id="printToPdf" method="post" action="/htmltopdf">
+            <input type="hidden" id="urlToPrint" name="urlToPrint">
+            <input type="hidden" id="screenWidth" name="screenWidth">
+            <input type="hidden" id="screenHeight" name="screenHeight">
+            <input type="hidden" id="pageWidth" name="pageWidth">
+            <input type="hidden" id="pageHeight" name="pageHeight">
+            <input type="hidden" id="orientation" name="orientation">
+            <input type="hidden" id="delay" name="delay">
+        </form>
+        <script>
+            //if pdf=1 found as query param, it will print to pdf
+            $(document).ready(function () {
+                printToPdf()
+            });
+
+        </script>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#editable-info").addClass("hidden");
+            //if()
+        });
+
+        $("#edit-profile").click(function () {
+            if ($("#editable-info").hasClass("hidden")) {
+                $("#editable-info").removeClass("hidden");
+            } else {
+                $("#editable-info").addClass("hidden");
+            }
+        });
+
+    //    $("#save-profile-changes").click(function () {
+    //        console.log("input Image:" + $("#inputImage").val().size);
+    //        //$("#uploadedPhoto").val($("#inputImage").val());
+    //        //$("form").submit();
+    //    });
+    </script>
+    <script type="text/javascript" charset="utf-8">
+        $(document).ready(function () {
+            var $inputImage = $("#inputImage");
+            console.log('Image script working...');
+            if (window.FileReader) {
+
+                $inputImage.change(function () {
+
+                    var fileReader = new FileReader(),
+                        files = this.files,
+                        file;
+                    if (!files.length) {
+                        return;
+                    }
+                    file = files[0];
+
+                    if (/^image\/\w+$/.test(file.type)) {
+
+                        fileReader.readAsDataURL(file);
+                        fileReader.onload = function () {
+
+                            //$inputImage.val("");
+                            // creatig the byte array
+                            console.log(this.result);
+                            var imgFile = this.result;
+
+                            //var byteCharacters = atob(this.result);
+                            var byteNumbers = new Array(imgFile.length);
+                            for (var i = 0; i < imgFile.length; i++) {
+                                byteNumbers[i] = imgFile.charCodeAt(i);
+                            }
+                            console.log(byteNumbers);
+                            var byteArray = new Uint8Array(byteNumbers);
+                            console.log(byteArray);
+                            var contentType = 'image';
+                            var blob = new Blob([byteArray], {
+                                type: contentType
+                            });
+                            //$("#inputImage").val(imgFile);
+
+                        };
+
+                    } else {
+                        showMessage("Please choose an image file.");
+                    }
+                });
+            } else {
+
+                $inputImage.addClass("hide");
+            }
+        });
+    </script>
+    <style>
+        .row.table-row {
+            display: table;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .row.table-row>[class*="col-"] {
+            float: none;
+            float: none;
+            display: table-cell;
+            vertical-align: top;
+        }
+
+        @media only screen and (max-width: 768px) {
+
+            /* For mobile phones: */
+            .row.table-row>[class*="col-"] {
+                float: none;
+                float: none;
+                display: table-row;
+                vertical-align: top;
+            }
+        }
+    </style>
+    <script>
+        //a take on the problem
+        $("#save-profile-changes").on("click", function () {
+            // disable buttons while fetching data
+            $("#save-profile-changes").prop("disabled", true);
+            var formData = new FormData($('#uploadForm')[0]);
+            console.log(formData.toString());
+            console.log('Will try to upload photo..');
+            $.ajax({
+                url: "/um/editProfile",
+                type: "POST",
+                contentType: false,
+                processData: false,
+                onStart: function () { console.log('starting upload'); console.log(this); },
+                onComplete: function (response) { console.log('got response: '); console.log(response); console.log(this); },
+                onCancel: function () { console.log('cancelling: '); console.log(this); },
+                validate_extensions: true,
+                valid_extensions: ['png', 'jpg', 'jpeg'],
+                submit_button: null,
+                cache: false,
+                data: formData,
+                success: function (data, textStatus, jqXHR) {
+                    console.log("Photo uploaded successfully");
+
+                    window.location = "/um/myProfile";
+
+
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log("unable to upload photo:" + textStatus + "//" + errorThrown);
+                    location.reload(true);
+                }
+            });
+            console.log('Finished ajax POST call.');
+        });
+    </script>
+
+    <script src="http://viceroydemo.lyk.io/assets/js/plugins/chosen/chosen.jquery.js"></script>
+
+    <script src="http://viceroydemo.lyk.io/assets/js/plugins/jasny/jasny-bootstrap.min.js"></script>
+
+    <script src="http://viceroydemo.lyk.io/assets/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+
+    <script src="http://viceroydemo.lyk.io/assets/js/plugins/cropper/cropper.min.js"></script>
+
+    <script src="http://viceroydemo.lyk.io/assets/js/plugins/iCheck/icheck.min.js"></script>
+
+    <script src="http://viceroydemo.lyk.io/assets/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script>
+        // Scripts for Scrolling User Info + Testing Progress Bar
+
+        $("#fadingElements div").hide();
+
+        function fades($div, cb) {
+            $div.fadeIn(5000, function () {
+                $div.fadeOut(5000, function () {
+                    var $next = $div.next();
+                    if ($next.length > 0) {
+                        fades($next, cb);
+                    }
+                    else {
+                        // The last element has faded away, call the callback
+                        cb();
+                    }
+                });
+            });
+        }
+        function startFading($firstDiv) {
+            fades($firstDiv, function () {
+                startFading($firstDiv);
+            });
+        }
+        startFading($("#fadingElements div:first-child"));
+
+
+        $(function () {
+            var current_progress = 0;
+            var interval = setInterval(function () {
+                current_progress += 10;
+                $("#dynamic")
+                    .css("width", current_progress + "%")
+                    .attr("aria-valuenow", current_progress)
+                    .text("Level: " + 1);
+                if (current_progress >= 80)
+                    clearInterval(interval);
+            }, 300);
+        });
+
+    </script>
+
+
+    <div class="modal inmodal fade" id="advanced-search-panel" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span
+                            class="sr-only">Close</span></button>
+                    <h4 class="modal-title">Advanced Search</h4>
+                    <small class="font-bold">Enter your search criteria here:</small>
+                </div>
+                <div class="modal-body">
+                    <div class="ibox-content">
+                        <form class="form-horizontal advanced-search-form" method="post" action="/search/advanced">
+                            <div class="form-group">
+                                <label for="search-term" class="col-sm-3 control-label">Search Keyword</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="search-term" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="unit-author" class="col-sm-3 control-label">Content Author </label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="unit-author" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group ">
+                                <label for="unit-date" class="col-sm-3 control-label">Date created</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="unit-date" data-mask="99/99/9999"
+                                        placeholder="">
+                                    <span class="help-block">day/month/year</span>
+                                </div>
+                            </div>
+                            <div class="form-group hide">
+                                <label for="unit-duration" class="col-sm-3 control-label">Content Duration</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="unit-duration" data-mask="999"
+                                        placeholder="">
+                                    <span class="help-block">minutes</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="unit-category" class="col-sm-3 control-label">Content Category</label>
+                                <div id="unit-category" class="col-sm-9">
+                                    <select id="category-Select" class="categorySelect form-control m-b" name="">
+                                        <option value="" disabled="" selected=""> -- select an option --</option>
+                                        <option value="168">
+                                            Hospitality</option>
+                                        <option value="169">Hosts, First</option>
+                                        <option value="170">What Brought You Here</option>
+                                        <option value="171">Remarkable</option>
+                                        <option value="172">Discover</option>
+                                        <option value="173">Intuitive</option>
+                                        <option value="174">Thoughtful Urgency</option>
+                                        <option value="175">
+                                            Resourceful</option>
+                                        <option value="176">Canvasing Memories</option>
+                                        <option value="177">Product Knowledge</option>
+                                        <option value="178">The Impossible</option>
+                                        <option value="179">Teamwork</option>
+                                        <option value="180">Competence</option>
+                                        <option value="181">
+                                            Individuality</option>
+                                        <option value="182">Ownership</option>
+                                        <option value="183">Diversity</option>
+                                        <option value="184">Respect</option>
+                                        <option value="185">Authenticity</option>
+                                        <option value="186">
+                                            Courage</option>
+                                        <option value="187">Be There</option>
+                                        <option value="188">Unabashed Provocateurs</option>
+                                        <option value="189">
+                                            Enrich</option>
+                                        <option value="190">Sensation</option>
+                                        <option value="191">Wealth</option>
+                                        <option value="192">Solutions</option>
+                                        <option value="193">
+                                            Reward</option>
+                                        <option value="194">Victors</option>
+                                        <option value="195">Spoils</option>
+                                        <option value="196">
+                                            Prideology</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <label> <input type="checkbox" id="combined-search" class="i-checks"> Results should meet
+                                all populated criteria. </label>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                    <button type="button" id="search-advanced-post" class="btn vr-button btn-default">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
